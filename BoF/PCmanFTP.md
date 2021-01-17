@@ -167,10 +167,14 @@ To be able to locate the badchars we have two options:
 - Find them manually
 - With mona.py commands
 
-We will create a hexadecimal string with all values ​​except "\ x00", with this command:
+We will create a hexadecimal string with all values ​​except "\x00", with this command:
 ````
 !mona bytearray -cpb "\x00"
 ````
-
+### Manual check
+1. We execute the program with the chain created previously.
+2. In immunity debugger, in the "Hexdump" section.
+3. Right click --> Go to --> ESP
+4. We check which one fails and so on until we get to \ xFF
 
 
