@@ -175,6 +175,12 @@ We will create a hexadecimal string with all values ​​except "\x00", with th
 1. We execute the program with the chain created previously.
 2. In immunity debugger, in the "Hexdump" section.
 3. Right click --> Go to --> ESP
-4. We check which one fails and so on until we get to \ xFF
+4. We check which one fails and so on until we get to \ xFF.
+
+### Mona commands
+1. We execute the program with the chain created previously.
+2. A .bin file is generated.
+3. We use this command to compare them: "!Mona compare -f C:\logs...bytearray.bin -a ADDRESS".
+4. We repeat the process until there is no badchar left.
 
 
