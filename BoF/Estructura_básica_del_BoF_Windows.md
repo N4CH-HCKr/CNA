@@ -1,4 +1,4 @@
-# Estrucutra básica del BoF en Windows
+# Estructura básica del BoF en Windows
 ---
 _Esta es una estructura básica de los pasos a seguir en Windows a la hora de explotar un Buffer Overflow básico y de los antiguos._
 
