@@ -21,6 +21,7 @@
  ````
  Una vez la identificamos nos damos cuenta que tiene abiertos los puertos 9999 y el 10000 con el servicio HTTP activo, por lo que abriremos la dirección en el navegador web.
  
+##### Instalación y uso de "Dirsearch"
  Al entrar en la dirección web encontramos una imagen y no hay enlaces ni posibilidad de movernos por la web, por lo que utilizaremos el siguiente programa: ***Dirsearch***
  ````
  https://github.com/maurosoria/dirsearch
@@ -41,6 +42,8 @@ Al ejecutar el programa nos encontramos con esto:
  ````
 
 Se crea un server socket en el puerto 9999. Es el momento de crear un script en python para ser capaces de enviarles bytes al servidor y ver si somos capaces de encontrar un BOF.
+
+##### Creacion del script
 
 El script nombrado "brainpain.py" es muy sencillo, simplemente genera una conexión y manda los bytes que le indiquemos:
 ````
