@@ -1,6 +1,6 @@
-# Estrucutra básica del BoF
+# Estrucutra básica del BoF en Windows
 ---
-_Esta es una estructura básica de los pasos a seguir a la hora de explotar un Buffer Overflow básico y de los antiguos._
+_Esta es una estructura básica de los pasos a seguir en Windows a la hora de explotar un Buffer Overflow básico y de los antiguos._
 
 1. Crear un padding muy grande y ver si hay buffer overflow.
 2. Tomar el control de EIP para ello:
