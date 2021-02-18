@@ -1,5 +1,5 @@
 # OSCP
- Repository of my preparation for the OSCP -- Thanks to CODE SPACE, especially to my tutor David Reguera (DREG).
+ Repository of my preparation for the OSCP -- Thanks to CODE SPACE, especially to my tutorS David Reguera (DREG) and Enrique Lauroba.
  
  In this repository I will add posts and files from my preparation for the OSCP.
 
