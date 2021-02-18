@@ -72,6 +72,20 @@ Para modificar archivo de configuracion: /etc/ssh/sshd_config
 		- Sirve para abrir un puerto remoto y poder conectarse
 		- ssh -R "puerto a abrir":"0.0.0.0":"puerto que esta en eschucha" "usuario"@"ip"
 		- Cogemos un puerto nuestro y lo ponemos en su máquina
+	
+		## Tunel con metasploit
+		
+		1. Iniciamos msfconsole: $msfconsole
+                2. Nos conectamos por SSH: use auxiliary/scanner/ssh/ssh_login
+                3. Cambiamos la shell a meterpreter: use post/multi/manage/shell_to_meterpreter
+                4. Nos metemos dentro de la sesión generada:
+                        - Para listar las sesiones: sessions -l
+                        - Para seleccionarla: sessions -i NumeroDeLaSesión
+
+                5. Dentro de la consola de meterpreter, podemos hacer "help" para que nos muestre los comando, vamos a utilizar portfwd para hacer túneles dentro de la red.
+                6. Portfwd:
+                        - Túnel remoto: portfwd add -R -l {puertoLocal} -p {puertoRemoto} -L {DireccionRemota}
+                        - Túnel local: portfwd add -l {puertoLocal} -p {puertoRemoto} -r {DireccionRemota}
 
 ## FTP ##
 
