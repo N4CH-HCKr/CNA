@@ -6,7 +6,7 @@ Encontraréis cosas tipo:
 - Comandos.
 - Herramientas.
 
-## LA IP ##
+### LA IP ###
 
 La IP es su identificación dentro de una red (TCP/IP).
 
