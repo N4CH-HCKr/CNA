@@ -264,4 +264,4 @@ Corre en el puerto 3306.
 - Permisos SUID:
 	- Buscarlos: find / -perm 4000 2>/dev/null
 - Ejecutar comando con otro usuario:
-        - sudo -u usuario /ruta/absoluta/programa
+        - Comando: sudo -u usuario /ruta/absoluta/programa
