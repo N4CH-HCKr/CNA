@@ -262,4 +262,6 @@ Corre en el puerto 3306.
 
 - Cuando estemos en un servidor sin permisos y queramos ejecutar un reverse shell, desplazarse a /tmp
 - Permisos SUID:
-	. Buscarlos: find / -perm 4000 2>/dev/null
+	- Buscarlos: find / -perm 4000 2>/dev/null
+- Ejecutar comando con otro usuario:
+        - sudo -u usuario /ruta/absoluta/programa
