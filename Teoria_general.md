@@ -21,35 +21,35 @@ Clases de IP's:
 	- D (224.0.0.0 - 239.255.255.255)
 	- E (240.0.0.0 - 255.255.255.254)
 
-## LA MASCARA ##
+### LA MASCARA ###
 
 Método con el que el sistema es capaz de identificar los límites de la red en la que se encuentra.
 
 
-## INTERNET ##
+### INTERNET ###
 
 - Un sist. autonomo es un grupo de redes que se rigen por las mismas normas, es decir, las ultimas redes.
 - Las ISP reservan sist. autonomos. Reservan pools de IP's.
 - Cuando compras un servicio compras un rango del sist. autonomo.
 - Los sist. autonomos se interconectan entre si con routers con el protocolo BGP (Border Gateway Protocol)
 
-## NAT ##
+### NAT ###
 
 Traduce las redes publicas a redes privadas.
 EL port forwarding sirve para pivotar entre redes.
 De fuera a dentro no se pueden conectar, pero de dentro a fuera si.
 
-## VLAN ##
+### VLAN ###
 
 Es una red virtual que sirve como segmentación lógica dentro de una red.
 Perfecto para aumentar la seguridad y separar las redes.
 Suelen crearlo los switches.
 
-## PUERTOS ##
+### PUERTOS ###
 
 Ver puertos abiertos en nuestra máquina: lsof -i -P -n
 
-## SSH ##
+### SSH ###
 
 Protocolo de acceso remoto a través de un canal seguro de datos.
 El port forwarding permite ejecutar aplicaciones en remoto en tu PC desde otro con el argumento: -X
@@ -87,7 +87,7 @@ Para modificar archivo de configuracion: /etc/ssh/sshd_config
                         - Túnel remoto: portfwd add -R -l {puertoLocal} -p {puertoRemoto} -L {DireccionRemota}
                         - Túnel local: portfwd add -l {puertoLocal} -p {puertoRemoto} -r {DireccionRemota}
 
-## FTP ##
+### FTP ###
 
 Es un protocolo de transferencia de archivos en texto claro, puerto predeterminado el 21.
 Hay dos tipos: Activo (21 control y 20 transferencia) y Pasivo (21 contro y puertos altos transferencia).
@@ -97,7 +97,7 @@ Subir archivos: put archivo
 Descargar archivos: get archivo
 Ejecutar comandos en tu ordenador local: !comando
 
-## Proxy ##
+### Proxy ###
 
 ES un servidor intermediario que recibe peticiones y las reenvia hacia el destino de forma enmascarada.
 Igual que una VPN pero no crea una red virtual.
@@ -119,7 +119,7 @@ Igual que una VPN pero no crea una red virtual.
 	- Funciona mejor que los túneles, ya que no está orientado a tunelizar un puerto.
 	              ssh -D "PUERTO" -q -N -f usuario@ip
 
-## HTTP ##
+### HTTP ###
 
 Las api rest, son las operaciones mas conocidas (POST, GET, PUT y DELETE), son unos servicios que nos facilitan las tareas.
 
@@ -135,7 +135,7 @@ Las api rest, son las operaciones mas conocidas (POST, GET, PUT y DELETE), son u
 	## Wget
 	wget "URL"
 
-## Servidores Web ##
+### Servidores Web ###
 
 Es un software que aloja un motor web para gestionar las peticiones HTTP/HTTPS.
 Segun server, crear reverse shell diferente.
@@ -199,7 +199,7 @@ Segun server, crear reverse shell diferente.
 			. python -c 'import pty'; pty.spawn("/bin/sh")'
 			. export TERM=xterm
 
-## SQL ##
+### SQL ###
 
 Es un lenguaje de Querys que se utiliza para realizar acciones en BD.
 Ejemplos: mysql, mariadb, postgresql, etc.
@@ -215,7 +215,7 @@ Corre en el puerto 3306.
 	--> Crear tabla: CREATE TABLE xxxxx (xxxx VARCHAR(20), xxxx INT(20), etc);
 	--> Seleccionar datos de una tabla: SELECT * FROM alumnos;
 
-## ATAQUES WEB ##
+### ATAQUES WEB ###
 
 	## CSRF 
 	Cross Site Request FOrgery, tipo de ataque que aprovecha el fallo en una web para que un usuario haga lo que no quiere.
@@ -246,7 +246,7 @@ Corre en el puerto 3306.
 
 		- Ataque metodo GET/POST: hydra -l USER -P DICCIONARIO -s 80 -f PAGINA ATACAR http-get /pagina_Atacar/error_al_fallar -v
 
-## PROTOCOLOS ##
+### PROTOCOLOS ###
 
 	## SMB
 	Protocolo que se usa para acceder y utilizar archivos en red. Se conoce como el sistema de archivos en red.
@@ -258,7 +258,7 @@ Corre en el puerto 3306.
 	Puerto 111.
 	Script nmap: nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount IP
 
-## OTROS ##
+### OTROS ###
 
 - Cuando estemos en un servidor sin permisos y queramos ejecutar un reverse shell, desplazarse a /tmp
 - Buscar permisos SUID:  find / -perm 4000 2>/dev/null
