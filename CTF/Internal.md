@@ -1,3 +1,4 @@
+# Resolviendo máquina Internal TryHackMe
 1. **Modificar el archivo /etc/hosts**
 
        - IP internal.thm
