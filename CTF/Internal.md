@@ -1,10 +1,10 @@
 1. **Modificar el archivo /etc/hosts**
 
-        - IP internal.thm
+       - IP internal.thm
 
 2. **Nmap** 
 
-        - sudo nmap -sV -sC -Pn -v 10.10.17.84 -o port_scan
+       - sudo nmap -sV -sC -Pn -v 10.10.17.84 -o port_scan
 
 3. **Uso de dirb**
  ````
