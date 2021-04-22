@@ -1,0 +1,44 @@
+1º Modificar el archivo /etc/hosts
+        . IP internal.thm
+
+2º Nmap: sudo nmap -sV -sC -Pn -v 10.10.17.84 -o port_scan
+
+3º Uso de dirb
+---- Scanning URL: http://10.10.17.84/ ----
+==> DIRECTORY: http://10.10.17.84/blog/
++ http://10.10.17.84/index.html (CODE:200|SIZE:10918)
+==> DIRECTORY: http://10.10.17.84/javascript/
+==> DIRECTORY: http://10.10.17.84/phpmyadmin/
++ http://10.10.17.84/server-status (CODE:403|SIZE:276)
+==> DIRECTORY: http://10.10.17.84/wordpress/
+
+4º Wordpress
+
+[+] Headers
+ | Interesting Entry: Server: Apache/2.4.29 (Ubuntu)
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[+] XML-RPC seems to be enabled: http://internal.thm/blog/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access
+
+[+] WordPress readme found: http://internal.thm/blog/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] The external WP-Cron seems to be enabled: http://internal.thm/blog/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[+] WordPress version 5.4.2 identified (Insecure, released on 2020-06-10).
+ | Found By: Rss Generator (Passive Detection)
