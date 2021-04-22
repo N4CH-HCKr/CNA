@@ -74,3 +74,10 @@
  | Username: admin, Password: *******
 Correo: admin@internal.thm
  ````
+6. **Creamos una reverse shell en Wordpress**
+        -  Vamos a los temas
+        - Customize
+        - Inyectamos en 404.php la reverse shell --> https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php
+        - Nos conectamos: http://10.10.17.84/wordpress/wp-content/themes/twentyseventeen/404.php
+        - Estamos a la escucha: nc -lvp 4444
+
