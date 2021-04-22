@@ -75,6 +75,7 @@
 Correo: admin@internal.thm
  ````
 6. **Creamos una reverse shell en Wordpress**
+
         -  Vamos a los temas
         - Customize
         - Inyectamos en 404.php la reverse shell --> https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php
