@@ -96,6 +96,9 @@ Realizar conexion: ftp IP PORT
 Subir archivos: put archivo
 Descargar archivos: get archivo
 Ejecutar comandos en tu ordenador local: !comando
+Levantar servidor en FTP:
+	- sudo pip3 install pyftpdlib
+	- sudo python3 -m pyftpdlib -p 21
 
 ### Proxy ###
 
@@ -262,6 +265,7 @@ Corre en el puerto 3306.
 
 - Cuando estemos en un servidor sin permisos y queramos ejecutar un reverse shell, desplazarse a /tmp
 - Buscar permisos SUID:  find / -perm 4000 2>/dev/null
+- Levantar servidor SMB: sudo python3 /usr/share/doc/python3-impacket/examples/smbserver.py <Nombre_carpeta> . -smb2support
 	
 - Ejecutar comando con otro usuario:
 
