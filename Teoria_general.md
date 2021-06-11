@@ -96,6 +96,7 @@ Realizar conexion: ftp IP PORT
 Subir archivos: put archivo
 Descargar archivos: get archivo
 Ejecutar comandos en tu ordenador local: !comando
+
 Levantar servidor en FTP:
 	- sudo pip3 install pyftpdlib
 	- sudo python3 -m pyftpdlib -p 21
